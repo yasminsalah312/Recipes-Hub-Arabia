@@ -1,0 +1,376 @@
+/* Style.css - Unified */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Cairo",sans-serif;
+  background: linear-gradient(135deg,white,#140445);
+  color:#0e0d0d;
+  direction: rtl;
+  min-height:100vh;
+  padding:30px 15px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  background: linear-gradient(135deg, #640e32, #11084c);
+  height: 100vh;
+  margin: 0;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+/* Header (used in pages) */
+header{
+  width:100%;
+  max-width:1100px;
+  background:#430b53;
+  color:#fff;
+  padding:18px 20px;
+  border-radius:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 3px 12px rgba(243, 239, 239, 0.931);
+  margin-bottom:25px;
+}
+header h1{font-size:20px;margin:0}
+header nav a{color:#fff;text-decoration:none;margin:0 8px;font-weight:600}
+header nav a:hover{color:#000000}
+
+/* Generic container for centered forms */
+.form-container, .profile-container, .add-recipe-form, .posts-wrapper {
+  background:#ffffff;
+  width:100%;
+  max-width:900px;
+  border-radius:14px;
+  padding:28px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.06);
+  margin-bottom:25px;
+}
+
+/* Form styles */
+.form-container { max-width:420px; text-align:center; }
+.form-container h2 { color:#151415; margin-bottom:16px; font-size:24px; }
+.form-container input, .form-container textarea, .form-container select {
+  width:100%; padding:12px 14px; margin:10px 0; border:1px solid rgb(75, 5, 61); border-radius:10px;
+  background:#f1eff1; font-size:15px;
+}
+.form-container button {
+  width:100%; padding:12px; background:#f8f4f7; color:#121111; border:none; border-radius:10px;
+  cursor:pointer; font-size:16px;
+}
+.form-container button:hover{background:#fefbff}
+.form-container a{color:#181818;text-decoration:none}
+.form-container .error{color:#020202;margin:10px 0;background:#e5dee5;padding:8px;border-radius:8px}
+.form-container .success{color:#0f0f0f;margin:10px 0;background:#f3ecf2;padding:8px;border-radius:8px}
+
+/* Add-recipe specific (used by add_recipe.php) */
+.add-recipe-form { max-width:600px; text-align:center; }
+.add-recipe-form h2 { color:#0d0c0d; font-size:26px; margin-bottom:12px; }
+.add-recipe-form textarea{min-height:110px; resize:vertical}
+
+/* Posts / recipe cards */
+.posts-wrapper { max-width:1100px; }
+.posts-container {
+  display:flex; flex-direction:column; gap:18px;
+}
+.recipe-card{
+  display:flex; flex-direction:row; gap:18px; align-items:flex-start;
+  background:#fff9f5; padding:16px; border-radius:12px; border:1px solid bl;
+}
+.recipe-card .left { flex:0 0 220px; }
+.recipe-card img{width:220px; height:140px; object-fit:cover; border-radius:10px}
+.recipe-card .right{flex:1}
+.recipe-card .header{font-weight:700;color:#141414;margin-bottom:6px}
+.recipe-card .caption{margin-bottom:8px}
+.recipe-card .details p{margin:6px 0; font-size:14px}
+.fav-btn {
+  display:inline-block; padding:8px 12px; border-radius:20px; border:none; background:white; color:#5f0c38;
+  cursor:pointer; font-weight:700;
+}
+.fav-msg{margin-top:8px;font-size:13px;color:#010f13}
+
+/* Favorites remove button */
+.fav-btn.remove{background:#451667}
+
+/* Profile page */
+.profile-header{ text-align:center; margin-bottom:12px }
+.profile-links .btn{display:inline-block;margin:8px 6px;padding:10px 14px;border-radius:10px;background:#5b0b64;color:#fff;text-decoration:none}
+.tabs{display:flex; gap:10px; justify-content:center; margin:16px 0}
+.tab-btn{background:#54092e;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
+.tab-btn.active{background:#5b0d4e;color:#fff}
+
+/* Responsive */
+@media (max-width:900px){
+  .recipe-card{flex-direction:column}
+  .recipe-card .left{flex:0 0 auto}
+  .recipe-card img{width:100%; height:180px}
+  .posts-wrapper, .form-container, .add-recipe-form{padding:20px}
+
+}
+/* 🌿 Recipe Hub Arabia - Main Style.css */
+/* تصميم احترافي بسيط ومتناسب مع جميع الصفحات */
+
+:root {
+  --main-color: #eae2e9;
+  --dark-color: #131313;
+  --light-bg: #fafafa;
+  --border-radius: 12px;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", "Cairo", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--light-bg);
+  color: var(--dark-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+/* 🌸 عام */
+h2, h3, h4 {
+  color: var(--main-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+a {
+  color: var(--main-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* 🧡 الحاوية العامة للفورم */
+.form-container {
+  background: rgb(238, 236, 238);
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.form-container input,
+.form-container textarea,
+.form-container select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  color: #101010;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.form-container button {
+  background: var(--main-color);
+  background-color: #f3f6f7;
+  color: rgb(24, 24, 24);
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s;
+}
+.form-container button:hover {
+  background: #671549;
+}
+
+/* ✅ رسائل الخطأ والنجاح */
+.error {
+  color: #cd117f;
+  margin-bottom: 10px;
+}
+
+.success {
+  color: #0c4a0f;
+  margin-bottom: 10px;
+}
+
+/* 🍽️ صفحة البروفايل والوصفات */
+.profile-container {
+  background: rgb(255, 255, 255);
+  width: 90%;
+  max-width: 800px;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.recipe-card {
+  background: #f4eff6;
+  border: 1px solid #19191a;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px 0;
+  box-shadow: var(--shadow);
+}
+
+.recipe-card img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.tabs {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tabs a {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 8px 15px;
+  background: #48093c;
+  border: 1px solid var(--main-color);
+  border-radius: 8px;
+  color: var(--main-color);
+}
+.tabs a.active,
+.tabs a:hover {
+  background: var(--main-color);
+  color: rgb(247, 252, 254);
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+  .profile-container, .form-container {
+    width: 100%;
+    padding: 20px;
+  }
+}
+/* 🌿 التصميم العام */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(57, 14, 48);
+    margin: 0;
+    padding: 0;
+    color: #111112;
+}
+
+/* 🔹 شريط التنقل */
+.navbar {
+    background-color: #180318;
+    color: rgb(241, 232, 232);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 25px;
+}
+
+.navbar h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.navbar a {
+    color: rgb(21, 20, 20);
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.navbar a.logout {
+    background-color: rgb(239, 239, 241);
+    color: #09041a;
+    padding: 6px 12px;
+    border-radius: 5px;
+}
+
+/* 🧾 صندوق النماذج */
+.form-container {
+    background: rgb(91, 10, 75);
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(240, 245, 245, 0.906);
+    text-align: center;
+    color: rgb(25, 3, 3);;
+
+
+}
+
+.form-container h2 {
+    color: #e5e0e8;
+    margin-bottom: 20px;
+}
+
+/* 🧠 الحقول */
+input[type="text"], input[type="email"], input[type="password"], textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #2b0d41;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+/* 🧡 الأزرار */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4a0c4d;
+    color: rgb(255, 253, 253);
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #500f59;
+}
+
+/* ✅ الرسائل */
+.message {
+    margin-top: 15px;
+}
+
+.error {
+    color: rgb(158, 10, 153);
+    font-weight: bold;
+}
+
+.success {
+    color: rgb(18, 79, 54);
+    font-weight: bold;
+}
+
+/* 📱 تجاوب الشاشات */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar a {
+        display: inline-block;
+        margin: 5px;
+    }
+}
